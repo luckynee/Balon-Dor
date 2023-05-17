@@ -18,6 +18,7 @@ public class BalonParent : MonoBehaviour
 
     public float  kecepatan;
     private Rigidbody2D rb;
+    public bool isHit;
 
     public int colorId;
 
@@ -48,8 +49,14 @@ public class BalonParent : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(-(50f + kecepatan), 0f);
+        rb.velocity = new Vector2(-(150f + kecepatan), 0f);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.CompareTag("Batas")){
+            Destroy(gameObject);
+            ctrl.fail++;
+        }
+    }
     
 }
