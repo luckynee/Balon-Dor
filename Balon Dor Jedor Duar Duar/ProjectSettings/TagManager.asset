@@ -9,6 +9,7 @@ TagManager:
   - Slot3
   - Target
   - Baloons
+  - Batas
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,8 @@ public class ControlManager : MonoBehaviour
     [HideInInspector] 
     public int iDPeluru;
     public bool desMerah , desBiru , desKuning;
+    public int score;
+    public int fail;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,8 @@ public class ControlManager : MonoBehaviour
         Merah();
         Kuning();
         Biru();
-
+        Debug.Log("total score"+score);
+        Debug.Log("total fail"+fail);
         Debug.Log("ID peluru"+iDPeluru);
         
 

@@ -4,6 +4,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
+    public GameObject win;
 
     [System.Serializable]
     public class Wave
@@ -12,10 +13,12 @@ public class WaveSpawner : MonoBehaviour
         public Transform[] enemies;
         public int count;
         public float rate;
+        
     }
 
     public Wave[] waves;
     private int nextWave = 0;
+    public int totalEnemy = 0 ;
 
     public Transform[] spawnPoints;
 
@@ -25,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
-
+    private bool isWaveCompleted = false;
     private Transform enemyParent;
 
     void Start()
@@ -42,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("total"+totalEnemy);
         if (state == SpawnState.WAITING)
         {
             if (!EnemyIsAlive())
@@ -54,7 +58,7 @@ public class WaveSpawner : MonoBehaviour
             }
         }
 
-        if (waveCountdown <= 0f)
+        if (!isWaveCompleted && waveCountdown <= 0f)
         {
             if (state != SpawnState.SPAWNING)
             {
@@ -87,6 +91,8 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Spawning Wave: " + wave.name);
         state = SpawnState.SPAWNING;
 
+       
+
         for (int i = 0; i < wave.count; i++)
         {
             Transform enemy = wave.enemies[Random.Range(0, wave.enemies.Length)];
@@ -106,6 +112,8 @@ public class WaveSpawner : MonoBehaviour
         
         Transform enemyTransform = Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         enemyTransform.SetParent(enemyParent);
+
+        totalEnemy++;
     }
 
     void WaveCompleted()
@@ -117,7 +125,10 @@ public class WaveSpawner : MonoBehaviour
 
         if(nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 0;
+
+            win.SetActive(true);
+             isWaveCompleted = true;
+
             Debug.Log("All Waves Complete! Looping...");
         }
         else
@@ -125,4 +136,6 @@ public class WaveSpawner : MonoBehaviour
             nextWave++;
         }
     }
+
+   
 }
