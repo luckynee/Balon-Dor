@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuGameManager : MonoBehaviour
 {
@@ -14,12 +15,6 @@ public class MenuGameManager : MonoBehaviour
         gameStart = false;
     }
 
-    // private void OnMouseDown() {
-    //     if(!gameStart){ 
-    //         GameStart();
-    //     }
-    // }
-
     void GameStart(){
         Debug.Log("game start");
         pilihLevel.SetActive(true);
@@ -31,6 +26,10 @@ public class MenuGameManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && !gameStart){
             GameStart();
         }
+    }
+
+    public void PlayGame(){
+        SceneManager.LoadScene(1);
     }
 
 }
