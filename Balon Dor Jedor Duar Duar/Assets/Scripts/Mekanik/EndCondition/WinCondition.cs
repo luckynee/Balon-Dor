@@ -10,6 +10,8 @@ public class WinCondition : MonoBehaviour
     public WaveSpawner wave;
     public Text scoreText;
     public Text failText;
+    public StarHolder starHolder;
+    public ads ads;
 
     private string currentState;
 
@@ -18,7 +20,8 @@ public class WinCondition : MonoBehaviour
     const string BINTANG2 = "bintang2";
     const string BINTANG3 = "bintang3"; 
 
-    void Start(){        
+    void Start(){
+        ads.LoadInterstitialAd();  
     }
 
     void Update(){
@@ -32,23 +35,35 @@ public class WinCondition : MonoBehaviour
         if(wave.totalEnemy % 2 == 0){
             if(ctrl.score == wave.totalEnemy){
                 ChangeAnimationState(BINTANG3);
+                starHolder.totalStar += 3;
+                Ads();
             }else
             if(ctrl.score >= (wave.totalEnemy / 2)){
                 ChangeAnimationState(BINTANG2);
+                starHolder.totalStar += 2;
+                Ads();
             }else
             if(ctrl.score < (wave.totalEnemy / 2)){
                 ChangeAnimationState(BINTANG1);
+                starHolder.totalStar += 1;
+                Ads();
             }
         }else
         {
             if(ctrl.score == wave.totalEnemy){
                 ChangeAnimationState(BINTANG3);
+                starHolder.totalStar += 3;
+                Ads();
             }else
             if(ctrl.score >= ((wave.totalEnemy + 1) / 2)){
                 ChangeAnimationState(BINTANG2);
+                starHolder.totalStar += 2;
+                Ads();
             }else
             if(ctrl.score < ((wave.totalEnemy + 1) / 2)){
                 ChangeAnimationState(BINTANG1);
+                starHolder.totalStar += 1;
+                Ads();
             }
         }
     }
@@ -60,5 +75,10 @@ public class WinCondition : MonoBehaviour
         animator.Play(newState);
 
         currentState = newState;
+    }
+
+    void Ads(){
+        // ads.LoadInterstitialAd();     
+        ads.ShowAd();
     }
 }
