@@ -10,12 +10,10 @@ public class Anim : MonoBehaviour
     public int typeAchievment = 0;
 
     private void OnEnable() {
-        EventManager.OnLevelCompleted += PlayAnimation;
         EventManager.OnButtonIkanClicked += ClickButton;
     }
 
     private void OnDisable() {
-        EventManager.OnLevelCompleted -= PlayAnimation;
         EventManager.OnButtonIkanClicked -= ClickButton;
     }
 

@@ -9,18 +9,20 @@ public class MenuGameManager : MonoBehaviour
     public GameObject mainMenu;
     public bool gameStart;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameStart = false;
-    }
-
     void GameStart(){
-        Debug.Log("game start");
+        Debug.Log("game start");    
         pilihLevel.SetActive(true);
         mainMenu.SetActive(false);
         gameStart = true;
     }
+
+    public void BackToMenu(){
+        Debug.Log("back to menu");
+        pilihLevel.SetActive(false);
+        mainMenu.SetActive(true);
+        gameStart = false;
+    }
+
 
     private void Update() {
         if(Input.GetMouseButtonDown(0) && !gameStart){
@@ -32,4 +34,5 @@ public class MenuGameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    
 }

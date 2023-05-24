@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void LevelCompleted();
+    public delegate void LevelCompleted(int level);
     public static event LevelCompleted OnLevelCompleted;
+    public delegate void LevelUnlocked(int level);
+    public static event LevelUnlocked OnLevelUnlocked;
     public delegate void ButtonClicked();
     public static event ButtonClicked OnButtonIkanClicked;
 
-    public static void LevelComplete()
+    public static void LevelComplete(int level)
     {
-        OnLevelCompleted?.Invoke();
+        Debug.Log("dfefefefef");
+        OnLevelCompleted?.Invoke(level);
+    }
+    
+    public static void LevelLock(int level)
+    {
+        OnLevelUnlocked?.Invoke(level);
     }
 
     public static void GetAchievmentButtonClicked()

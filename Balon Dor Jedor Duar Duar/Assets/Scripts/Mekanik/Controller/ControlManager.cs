@@ -31,9 +31,9 @@ public class ControlManager : MonoBehaviour
         Merah();
         Kuning();
         Biru();
-        Debug.Log("total score"+score);
-        Debug.Log("total fail"+fail);
-        Debug.Log("ID peluru"+iDPeluru);
+        // Debug.Log("total score"+score);
+        // Debug.Log("total fail"+fail);
+        // Debug.Log("ID peluru"+iDPeluru);
         
 
     }
