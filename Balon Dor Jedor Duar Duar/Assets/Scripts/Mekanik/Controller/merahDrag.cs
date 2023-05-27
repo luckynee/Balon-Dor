@@ -7,6 +7,7 @@ public class merahDrag : MonoBehaviour
 {
     public int iDWarna;
     Vector2 startPos, slotPos;
+    public SoundRandomizer soundRandomizer;
 
     [HideInInspector] 
     public bool startDrag,inColBiru,inColKuning,inColMerah;
@@ -16,6 +17,7 @@ public class merahDrag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        soundRandomizer = GameObject.Find("SFX").GetComponent<SoundRandomizer>();
         startPos = transform.position;
     }
 
@@ -36,6 +38,7 @@ public class merahDrag : MonoBehaviour
 
     public void StartDragUI()
     {
+        soundRandomizer.hitAudioGantiWarnaPrimer();
         startDrag = true; 
         inColMerah = true;
     }
@@ -58,6 +61,7 @@ public class merahDrag : MonoBehaviour
             inColMerah = false;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
         }else  if (collision.CompareTag("Slot3"))
         {
             inColBiru = true;
@@ -65,6 +69,7 @@ public class merahDrag : MonoBehaviour
             inColMerah = false;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
         }
     }
 

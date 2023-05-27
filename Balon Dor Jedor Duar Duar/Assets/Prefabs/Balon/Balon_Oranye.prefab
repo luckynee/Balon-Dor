@@ -31,7 +31,7 @@ RectTransform:
   m_GameObject: {fileID: 2856729828296728208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 350}
+  m_SizeDelta: {x: 850, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4493644509705107695
 CanvasRenderer:
@@ -65,12 +65,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 100, y: 200, z: 100, w: 150}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be35f08aea9ff0a498cd796325fd851d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8ecaf97888976645a1d079eebd2e868, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -116,7 +116,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 100
+  m_Radius: 250
 --- !u!114 &3936665626031082041
 MonoBehaviour:
   m_ObjectHideFlags: 0

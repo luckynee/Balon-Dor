@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000045776, y: 0}
-  m_SizeDelta: {x: 700, y: 950}
+  m_SizeDelta: {x: 850, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7684824940675884360
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 100, y: 200, z: 100, w: 150}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -112,7 +112,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -129,8 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6206d1320ab47e42a57a72fae0cd027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pecahSource: {fileID: 0}
-  wrongSource: {fileID: 0}
+  soundRandomizer: {fileID: 0}
   target: {fileID: 8312658557572252471}
   ctrl: {fileID: 0}
   animator: {fileID: 619288558855379996}
