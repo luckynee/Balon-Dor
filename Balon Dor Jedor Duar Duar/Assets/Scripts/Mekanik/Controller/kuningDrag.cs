@@ -6,6 +6,7 @@ public class kuningDrag : MonoBehaviour
 {
      public int iDWarna;
     Vector2 startPos, slotPos;
+    public SoundRandomizer soundRandomizer;
 
     [HideInInspector] 
     public bool startDrag,inColBiru,inColKuning,inColMerah;
@@ -15,6 +16,7 @@ public class kuningDrag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        soundRandomizer = GameObject.Find("SFX").GetComponent<SoundRandomizer>();
         startPos = transform.position;
     }
 
@@ -35,6 +37,7 @@ public class kuningDrag : MonoBehaviour
 
     public void StartDragUI()
     {
+        soundRandomizer.hitAudioGantiWarnaPrimer();
         startDrag = true; 
         inColKuning = true;
     }
@@ -57,6 +60,7 @@ public class kuningDrag : MonoBehaviour
             inColMerah = true;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
 
         }else  if (collision.CompareTag("Slot3"))
         {
@@ -65,6 +69,7 @@ public class kuningDrag : MonoBehaviour
             inColMerah = false;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
         }
     }
 

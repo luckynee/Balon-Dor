@@ -6,12 +6,7 @@ using UnityEngine.UI;
 
 public class BalonParent : MonoBehaviour
 {
-    public GameObject pecahSource;
-    // public AudioSource pecah;
-
-    public GameObject wrongSource;
-    // public AudioSource wrong;
-
+    public SoundRandomizer soundRandomizer;
     public GameObject target;
     public ControlManager ctrl;
     public Animator animator;
@@ -25,19 +20,15 @@ public class BalonParent : MonoBehaviour
    void Start()
     {
         ctrl = GameObject.Find("GameManager").GetComponent<ControlManager>();    
+        soundRandomizer = GameObject.Find("SFX").GetComponent<SoundRandomizer>();
 
-        // pecahSource = GameObject.Find("pecahAudio");
-        // pecah = pecahSource.GetComponent<AudioSource>();
-
-        // wrongSource = GameObject.Find("wrongAudio");
-        // wrong = wrongSource.GetComponent<AudioSource>();
-        
         
     }
     // Update is called once per frame
     void Update()
     {
       Debug.Log("color id adalah" + colorId);
+       
       
     }
 

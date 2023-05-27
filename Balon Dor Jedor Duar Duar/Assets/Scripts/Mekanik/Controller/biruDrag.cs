@@ -5,6 +5,7 @@ using UnityEngine;
 public class biruDrag : MonoBehaviour
 {
     public int iDWarna;
+    public SoundRandomizer soundRandomizer;
     Vector2 startPos, slotPos;
 
     [HideInInspector] 
@@ -15,6 +16,7 @@ public class biruDrag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        soundRandomizer = GameObject.Find("SFX").GetComponent<SoundRandomizer>();
         startPos = transform.position;
     }
 
@@ -36,6 +38,7 @@ public class biruDrag : MonoBehaviour
     public void StartDragUI()
     {
         startDrag = true; 
+        soundRandomizer.hitAudioGantiWarnaPrimer();
         inColBiru = true;
     }
 
@@ -57,6 +60,7 @@ public class biruDrag : MonoBehaviour
             inColMerah = false;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
         }else  if (collision.CompareTag("Slot"))
         {
             inColBiru = false;
@@ -64,6 +68,7 @@ public class biruDrag : MonoBehaviour
             inColMerah = true;
             slotPos = collision.transform.position;
             transform.position = slotPos;
+            soundRandomizer.hitAudioGantiWarnaSekunder();
         }
     }
 
