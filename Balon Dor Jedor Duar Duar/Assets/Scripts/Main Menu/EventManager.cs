@@ -8,16 +8,19 @@ public class EventManager : MonoBehaviour
     public static event LevelCompleted OnLevelCompleted;
     public delegate void LevelUnlocked(int level);
     public static event LevelUnlocked OnLevelUnlocked;
+    public delegate void GetStar(int star);
+    public static event GetStar OnGetStar;
+    public delegate void GetAchievment();
+    public static event GetAchievment OnGetAchievment;
     public delegate void ButtonClicked();
     public static event ButtonClicked OnButtonIkanClicked;
 
     public static void LevelComplete(int level)
     {
-        Debug.Log("dfefefefef");
         OnLevelCompleted?.Invoke(level);
     }
     
-    public static void LevelLock(int level)
+    public static void UnlockedLevel(int level)
     {
         OnLevelUnlocked?.Invoke(level);
     }
@@ -26,4 +29,14 @@ public class EventManager : MonoBehaviour
     {
         OnButtonIkanClicked?.Invoke();
     }
+
+    public static void GetAchievmentAnim()
+    {
+        OnGetAchievment?.Invoke();
+    }
+
+    public static void GetTheStar(int star)
+    {
+        OnGetStar?.Invoke(star);
+    }    
 }

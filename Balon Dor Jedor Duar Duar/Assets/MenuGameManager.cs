@@ -30,8 +30,8 @@ public class MenuGameManager : MonoBehaviour
         }
     }
 
-    public void PlayGame(){
-        SceneManager.LoadScene(1);
+    public void PlayGame(int levelIndex){
+        SceneManager.LoadScene(levelIndex);
     }
 
     

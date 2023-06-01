@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool isCompleted = true;
-  
-    // masih ga guna
+
     private void OnEnable() {
         Debug.Log("level enaasdadble");
         EventManager.OnLevelCompleted += CompleteLevel;
@@ -20,13 +19,13 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel(int level)
     {
-        Debug.Log("Level " + level + " is completed!");
+        Debug.Log("Level " + (level + 1) + " is completed!");
         DataPersistence.instance.AddLevelCompleted(level);
     }
 
     public void UnlockLevel(int level)
     {
-        Debug.Log("Level " + level + " is unlocked!");
+        Debug.Log("Level " + (level + 2) + " is unlocked!");
         DataPersistence.instance.AddUnlockedLevel(level);
     }
 

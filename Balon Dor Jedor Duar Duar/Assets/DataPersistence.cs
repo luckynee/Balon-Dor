@@ -24,5 +24,4 @@ public class DataPersistence : MonoBehaviour
     public void AddUnlockedLevel(int level){
         levelUnlocked.Add(level);
     }
-
 }

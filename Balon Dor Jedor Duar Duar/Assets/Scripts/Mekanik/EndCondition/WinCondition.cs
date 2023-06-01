@@ -11,9 +11,10 @@ public class WinCondition : MonoBehaviour
     public WaveSpawner wave;
     public Text scoreText;
     public Text failText;
-    public StarHolder starHolder;
     public ads ads;
-    public int currentLevel = 1;
+    public bool isPlaying;
+    public bool isWinning;
+    
 
     private string currentState;
 
@@ -25,6 +26,8 @@ public class WinCondition : MonoBehaviour
     void Start(){
         ads.LoadInterstitialAd();  
         isWinningPanel = GameObject.Find("Win");
+        isPlaying = true;
+        isWinning = false;
     }
 
     void Update(){
@@ -32,55 +35,63 @@ public class WinCondition : MonoBehaviour
         scoreText.text = ctrl.score.ToString();
         failText.text = ctrl.fail.ToString();   
 
-        if(isWinningPanel.activeSelf){
-            EventManager.LevelComplete(currentLevel - 1);
-            EventManager.LevelLock(currentLevel - 1);
+        if(isWinning){
+            EventManager.LevelComplete(LevelManager.instance.GetCurrentLevel() - 1);
+            EventManager.UnlockedLevel(LevelManager.instance.GetCurrentLevel() - 1);
+            if(StarHolder.instance.star[LevelManager.instance.GetCurrentLevel() - 1] < StarHolder.instance.getStar){
+                StarHolder.instance.star[LevelManager.instance.GetCurrentLevel() - 1] = StarHolder.instance.getStar;
+                Debug.Log("new star: " + StarHolder.instance.getStar);
+            }
+            isWinning = !isWinning;
         }
 
     }
 
     void hitung(){
-
-        if(wave.totalEnemy % 2 == 0){
-            if(ctrl.score == wave.totalEnemy){
-                ChangeAnimationState(BINTANG3);
-                starHolder.totalStar += 3;
-                ads.ShowAd();
-                
+        if(isPlaying){
+            if(wave.totalEnemy % 2 == 0){
+                if(ctrl.score == wave.totalEnemy){
+                    ChangeAnimationState(BINTANG3);
+                    StarHolder.instance.getStar += 3;
+                    ads.ShowAd();
+                    
+                }else
+                if(ctrl.score >= (wave.totalEnemy / 2)){
+                    ChangeAnimationState(BINTANG2);
+                    StarHolder.instance.getStar += 2;
+                    ads.ShowAd();
+                    
+                }else
+                if(ctrl.score < (wave.totalEnemy / 2)){
+                    ChangeAnimationState(BINTANG1);
+                    StarHolder.instance.getStar += 1;
+                    ads.ShowAd();
+                    
+                }
             }else
-            if(ctrl.score >= (wave.totalEnemy / 2)){
-                ChangeAnimationState(BINTANG2);
-                starHolder.totalStar += 2;
-                ads.ShowAd();
-                
-            }else
-            if(ctrl.score < (wave.totalEnemy / 2)){
-                ChangeAnimationState(BINTANG1);
-                starHolder.totalStar += 1;
-                ads.ShowAd();
-                
+            {
+                if(ctrl.score == wave.totalEnemy){
+                    ChangeAnimationState(BINTANG3);
+                    StarHolder.instance.getStar += 3;
+                    ads.ShowAd();
+                    
+                }else
+                if(ctrl.score >= ((wave.totalEnemy + 1) / 2)){
+                    ChangeAnimationState(BINTANG2);
+                    StarHolder.instance.getStar += 2;
+                    ads.ShowAd();
+                    
+                }else
+                if(ctrl.score < ((wave.totalEnemy + 1) / 2)){
+                    ChangeAnimationState(BINTANG1);
+                    StarHolder.instance.getStar += 1;
+                    ads.ShowAd();
+                }
             }
-        }else
-        {
-            if(ctrl.score == wave.totalEnemy){
-                ChangeAnimationState(BINTANG3);
-                starHolder.totalStar += 3;
-                ads.ShowAd();
-                
-            }else
-            if(ctrl.score >= ((wave.totalEnemy + 1) / 2)){
-                ChangeAnimationState(BINTANG2);
-                starHolder.totalStar += 2;
-                ads.ShowAd();
-                
-            }else
-            if(ctrl.score < ((wave.totalEnemy + 1) / 2)){
-                ChangeAnimationState(BINTANG1);
-                starHolder.totalStar += 1;
-                ads.ShowAd();
-                
-            }
+            isPlaying = false;
+            isWinning = true;
         }
+        
     }
 
     void ChangeAnimationState(string newState)
