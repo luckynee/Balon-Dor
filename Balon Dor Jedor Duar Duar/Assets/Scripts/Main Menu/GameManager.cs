@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isCompleted = true;
 
     private void OnEnable() {
         Debug.Log("level enaasdadble");
@@ -30,12 +29,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void GetAchievment(){
-        if (isCompleted)
-        {
-            Debug.Log("Level " + " is completed and you got an achievment!");
-        }
-    }
+    
 
     
 

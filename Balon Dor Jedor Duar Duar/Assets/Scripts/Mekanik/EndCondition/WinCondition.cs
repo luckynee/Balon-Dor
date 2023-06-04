@@ -52,19 +52,19 @@ public class WinCondition : MonoBehaviour
             if(wave.totalEnemy % 2 == 0){
                 if(ctrl.score == wave.totalEnemy){
                     ChangeAnimationState(BINTANG3);
-                    StarHolder.instance.getStar += 3;
+                    StarHolder.instance.getStar = 3;
                     ads.ShowAd();
                     
                 }else
                 if(ctrl.score >= (wave.totalEnemy / 2)){
                     ChangeAnimationState(BINTANG2);
-                    StarHolder.instance.getStar += 2;
+                    StarHolder.instance.getStar = 2;
                     ads.ShowAd();
                     
                 }else
                 if(ctrl.score < (wave.totalEnemy / 2)){
                     ChangeAnimationState(BINTANG1);
-                    StarHolder.instance.getStar += 1;
+                    StarHolder.instance.getStar = 1;
                     ads.ShowAd();
                     
                 }
@@ -72,19 +72,19 @@ public class WinCondition : MonoBehaviour
             {
                 if(ctrl.score == wave.totalEnemy){
                     ChangeAnimationState(BINTANG3);
-                    StarHolder.instance.getStar += 3;
+                    StarHolder.instance.getStar = 3;
                     ads.ShowAd();
                     
                 }else
                 if(ctrl.score >= ((wave.totalEnemy + 1) / 2)){
                     ChangeAnimationState(BINTANG2);
-                    StarHolder.instance.getStar += 2;
+                    StarHolder.instance.getStar = 2;
                     ads.ShowAd();
                     
                 }else
                 if(ctrl.score < ((wave.totalEnemy + 1) / 2)){
                     ChangeAnimationState(BINTANG1);
-                    StarHolder.instance.getStar += 1;
+                    StarHolder.instance.getStar = 1;
                     ads.ShowAd();
                 }
             }

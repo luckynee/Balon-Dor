@@ -7,20 +7,19 @@ public class MenuGameManager : MonoBehaviour
 {
     public GameObject pilihLevel;
     public GameObject mainMenu;
+    public MapTranstition mapTranstition;
     public bool gameStart;
 
     void GameStart(){
         Debug.Log("game start");    
-        pilihLevel.SetActive(true);
-        mainMenu.SetActive(false);
-        gameStart = true;
+        mapTranstition.LetsTransition();
+        StartCoroutine(JustWait());
+        
     }
 
     public void BackToMenu(){
-        Debug.Log("back to menu");
-        pilihLevel.SetActive(false);
-        mainMenu.SetActive(true);
-        gameStart = false;
+        mapTranstition.LetsTransition();
+        StartCoroutine(Wait());
     }
 
 
@@ -31,8 +30,28 @@ public class MenuGameManager : MonoBehaviour
     }
 
     public void PlayGame(int levelIndex){
-        SceneManager.LoadScene(levelIndex);
+        mapTranstition.LetsTransition();
+        StartCoroutine(waitBeforeChangeScene(levelIndex));
     }
 
+    IEnumerator JustWait(){
+        yield return new WaitForSeconds(1.6f);
+        pilihLevel.SetActive(true);
+        mainMenu.SetActive(false);
+        gameStart = true;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.6f);
+        pilihLevel.SetActive(false);
+        mainMenu.SetActive(true);
+        gameStart = false;
+    }
+
+    IEnumerator waitBeforeChangeScene(int levelIndex){
+        yield return new WaitForSeconds(1.6f);
+        SceneManager.LoadScene(levelIndex);
+    }
     
 }

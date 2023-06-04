@@ -9,6 +9,11 @@ public class LevelManager : MonoBehaviour
     public GameObject[] levelCompleted;
     public GameObject[] levelLocked;
     public GameObject[] levelUnlocked;
+    public GameObject[] starLevelUnlocked;
+    
+    public GameObject[]starObjectLevel1;
+    public GameObject[] starObjectLevel2;
+    public GameObject[] starObjectLevel3;
     public static LevelManager instance;
 
     private void Awake() {
@@ -31,13 +36,47 @@ public class LevelManager : MonoBehaviour
         foreach (int level in DataPersistence.instance.levelCompleted)
         {
             levelCompleted[level].SetActive(true);
+            if(levelCompleted[0].activeSelf){
+                starObjectLevel1[StarHolder.instance.star[0]].SetActive(true);
+            }
+            if(levelCompleted[1].activeSelf){
+                starObjectLevel2[StarHolder.instance.star[1]].SetActive(true);
+            }
+            if(levelCompleted[2].activeSelf){
+                starObjectLevel3[StarHolder.instance.star[2]].SetActive(true);
+            }
             
         }
 
         foreach (int level in DataPersistence.instance.levelUnlocked)
         {
             levelUnlocked[level].SetActive(true);
+            starLevelUnlocked[level].SetActive(true);
             levelLocked[level].SetActive(false);
         }
+
+        // foreach(int star in StarHolder.instance.star){
+        //     if(star == 0){
+        //         starObjectLevel1[0].SetActive(true);
+        //         starObjectLevel2[0].SetActive(true);
+        //         starObjectLevel3[0].SetActive(true);
+        //     }
+        //     if(star == 1){
+        //         starObjectLevel1[1].SetActive(true);
+        //         starObjectLevel2[1].SetActive(true);
+        //         starObjectLevel3[1].SetActive(true);
+        //     }
+        //     if(star == 2){
+        //         starObjectLevel1[2].SetActive(true);
+        //         starObjectLevel2[2].SetActive(true);
+        //         starObjectLevel3[2].SetActive(true);
+        //     }
+        //     if(star == 3){
+        //         starObjectLevel1[3].SetActive(true);
+        //         starObjectLevel2[3].SetActive(true);
+        //         starObjectLevel3[3].SetActive(true);
+        //     }
+        // }
+
     }
 }
