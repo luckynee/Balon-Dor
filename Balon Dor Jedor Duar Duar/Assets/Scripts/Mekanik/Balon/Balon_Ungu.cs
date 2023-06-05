@@ -14,7 +14,11 @@ public class Balon_Ungu : BalonParent , IPointerDownHandler
                 animator.SetTrigger("Pop");
                 Destroy(target, 0.5f);
                 ctrl.score += 1;
+                soundRandomizer.hitAudio();
             } 
+        }else
+        {
+            soundRandomizer.hitAudioSalah();
         }
     }
 

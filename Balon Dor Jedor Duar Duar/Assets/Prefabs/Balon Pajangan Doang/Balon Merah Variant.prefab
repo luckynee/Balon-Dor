@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bc46a1871e2f4e246871f7ed9c0bbc0a, type: 3}
+    - target: {fileID: 2010861740151897664, guid: c3a4d5d86762f4f449fd9572a4f51840, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d3e3c89a3b413384995f0a8b7a22300f, type: 2}
     - target: {fileID: 6334236893725496961, guid: c3a4d5d86762f4f449fd9572a4f51840, type: 3}
       propertyPath: m_Name
       value: Balon Merah Variant

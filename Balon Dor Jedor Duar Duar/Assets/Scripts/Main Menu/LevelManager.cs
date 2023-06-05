@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public StarHolder starHolder;
+    public GameObject setLastActivePanel;
     public GameObject[] levelCompleted;
     public GameObject[] levelLocked;
     public GameObject[] levelUnlocked;
@@ -54,6 +55,14 @@ public class LevelManager : MonoBehaviour
             starLevelUnlocked[level].SetActive(true);
             levelLocked[level].SetActive(false);
         }
+
+        
+        // foreach(bool panel in DataPersistence.instance.panelActive){
+        //     if(panel == true){
+        //         setLastActivePanel.SetActive(true);
+        //     }
+        // }
+    
 
         // foreach(int star in StarHolder.instance.star){
         //     if(star == 0){

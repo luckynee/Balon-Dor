@@ -6,6 +6,7 @@ public class DataPersistence : MonoBehaviour
 {
     public List<int> levelCompleted = new List<int>();
     public List<int> levelUnlocked = new List<int>();
+    // public List<bool> panelActive = new List<bool>(){false}; 
     public static DataPersistence instance;
 
     private void Awake() {

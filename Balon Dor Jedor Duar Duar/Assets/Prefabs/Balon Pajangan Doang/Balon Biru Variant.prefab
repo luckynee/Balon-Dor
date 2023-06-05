@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 769868802717a8549935e6d6fde17e5f, type: 3}
+    - target: {fileID: 1994292098811552975, guid: c3a4d5d86762f4f449fd9572a4f51840, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010861740151897664, guid: c3a4d5d86762f4f449fd9572a4f51840, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 81634bb146a3e9842bb822b80dfb01f8, type: 2}
     - target: {fileID: 6334236893725496961, guid: c3a4d5d86762f4f449fd9572a4f51840, type: 3}
       propertyPath: m_Name
       value: Balon Biru Variant

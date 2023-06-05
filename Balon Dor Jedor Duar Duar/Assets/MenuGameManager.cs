@@ -10,7 +10,7 @@ public class MenuGameManager : MonoBehaviour
     public MapTranstition mapTranstition;
     public bool gameStart;
 
-    void GameStart(){
+    public void GameStart(){
         Debug.Log("game start");    
         mapTranstition.LetsTransition();
         StartCoroutine(JustWait());
@@ -24,9 +24,9 @@ public class MenuGameManager : MonoBehaviour
 
 
     private void Update() {
-        if(Input.GetMouseButtonDown(0) && !gameStart){
-            GameStart();
-        }
+        // if(Input.GetMouseButtonDown(0) && !gameStart){
+        //     GameStart();
+        // }
     }
 
     public void PlayGame(int levelIndex){
