@@ -7,7 +7,7 @@ public class StarHolder : MonoBehaviour
 {
     public int getStar;
     public int totalStar;
-    public List<int> star = new List<int>() {0, 0, 0};  
+    public List<int> star = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0};  
 
     public static StarHolder instance;
 

@@ -6,6 +6,7 @@ public class DataPersistence : MonoBehaviour
 {
     public List<int> levelCompleted = new List<int>();
     public List<int> levelUnlocked = new List<int>();
+    public int lastActivePanel;
     // public List<bool> panelActive = new List<bool>(){false}; 
     public static DataPersistence instance;
 
@@ -24,5 +25,9 @@ public class DataPersistence : MonoBehaviour
 
     public void AddUnlockedLevel(int level){
         levelUnlocked.Add(level);
+    }
+
+    public void SetForMainMenu(int index){
+        lastActivePanel = index;
     }
 }

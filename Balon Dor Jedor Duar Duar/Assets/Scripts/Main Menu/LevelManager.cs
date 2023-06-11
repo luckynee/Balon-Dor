@@ -12,9 +12,16 @@ public class LevelManager : MonoBehaviour
     public GameObject[] levelUnlocked;
     public GameObject[] starLevelUnlocked;
     
-    public GameObject[]starObjectLevel1;
-    public GameObject[] starObjectLevel2;
-    public GameObject[] starObjectLevel3;
+    public GameObject[]carnivalStarLevel1;
+    public GameObject[] carnivalStarLevel2;
+    public GameObject[] carnivalStarLevel3;
+    public GameObject[] beachStarLevel1;
+    public GameObject[] beachStarLevel2;
+    public GameObject[] beachStarLevel3;
+
+    public GameObject[] parkStarLevel1;
+    public GameObject[] parkStarLevel2;
+    public GameObject[] parkStarLevel3;
     public static LevelManager instance;
 
     private void Awake() {
@@ -34,58 +41,70 @@ public class LevelManager : MonoBehaviour
     }
     
     private void Update() {
+        GetCarnivalStar();
+        GetBeachStar();
+        GetParkStar();
+
+        foreach (int level in DataPersistence.instance.levelUnlocked)
+        {
+            if(level != 8){
+
+                levelUnlocked[level].SetActive(true);
+                starLevelUnlocked[level].SetActive(true);
+                levelLocked[level].SetActive(false);
+            }
+        }
+
+    }
+
+    void GetCarnivalStar(){
         foreach (int level in DataPersistence.instance.levelCompleted)
         {
             levelCompleted[level].SetActive(true);
             if(levelCompleted[0].activeSelf){
-                starObjectLevel1[StarHolder.instance.star[0]].SetActive(true);
+                carnivalStarLevel1[StarHolder.instance.star[0]].SetActive(true);
             }
             if(levelCompleted[1].activeSelf){
-                starObjectLevel2[StarHolder.instance.star[1]].SetActive(true);
+                carnivalStarLevel2[StarHolder.instance.star[1]].SetActive(true);
             }
             if(levelCompleted[2].activeSelf){
-                starObjectLevel3[StarHolder.instance.star[2]].SetActive(true);
+                carnivalStarLevel3[StarHolder.instance.star[2]].SetActive(true);
             }
             
         }
+    }
 
-        foreach (int level in DataPersistence.instance.levelUnlocked)
+    void GetBeachStar(){
+        foreach (int level in DataPersistence.instance.levelCompleted)
         {
-            levelUnlocked[level].SetActive(true);
-            starLevelUnlocked[level].SetActive(true);
-            levelLocked[level].SetActive(false);
+            levelCompleted[level].SetActive(true);
+            if(levelCompleted[3].activeSelf){
+                beachStarLevel1[StarHolder.instance.star[3]].SetActive(true);
+            }
+            if(levelCompleted[4].activeSelf){
+                beachStarLevel2[StarHolder.instance.star[4]].SetActive(true);
+            }
+            if(levelCompleted[5].activeSelf){
+                beachStarLevel3[StarHolder.instance.star[5]].SetActive(true);
+            }
+            
         }
+    }
 
-        
-        // foreach(bool panel in DataPersistence.instance.panelActive){
-        //     if(panel == true){
-        //         setLastActivePanel.SetActive(true);
-        //     }
-        // }
-    
-
-        // foreach(int star in StarHolder.instance.star){
-        //     if(star == 0){
-        //         starObjectLevel1[0].SetActive(true);
-        //         starObjectLevel2[0].SetActive(true);
-        //         starObjectLevel3[0].SetActive(true);
-        //     }
-        //     if(star == 1){
-        //         starObjectLevel1[1].SetActive(true);
-        //         starObjectLevel2[1].SetActive(true);
-        //         starObjectLevel3[1].SetActive(true);
-        //     }
-        //     if(star == 2){
-        //         starObjectLevel1[2].SetActive(true);
-        //         starObjectLevel2[2].SetActive(true);
-        //         starObjectLevel3[2].SetActive(true);
-        //     }
-        //     if(star == 3){
-        //         starObjectLevel1[3].SetActive(true);
-        //         starObjectLevel2[3].SetActive(true);
-        //         starObjectLevel3[3].SetActive(true);
-        //     }
-        // }
-
+    void GetParkStar(){
+        foreach (int level in DataPersistence.instance.levelCompleted)
+        {
+            levelCompleted[level].SetActive(true);
+            if(levelCompleted[6].activeSelf){
+                parkStarLevel1[StarHolder.instance.star[6]].SetActive(true);
+            }
+            if(levelCompleted[7].activeSelf){
+                parkStarLevel2[StarHolder.instance.star[7]].SetActive(true);
+            }
+            if(levelCompleted[8].activeSelf){
+                parkStarLevel3[StarHolder.instance.star[8]].SetActive(true);
+            }
+            
+        }
     }
 }

@@ -15,9 +15,24 @@ EditorBuildSettings:
     path: Assets/Scenes/level_1.unity
     guid: b7182e6c17d49014d87651a762e24a66
   - enabled: 1
-    path: Assets/Scenes/Level_1.2.unity
-    guid: 34970d019c0b43a4cb971b6f25fd72b8
+    path: Assets/Scenes/level_1.1 Copy.unity
+    guid: b2713bab43b84d84aadff03d7c16a96d
   - enabled: 1
-    path: Assets/Scenes/Level_1.3.unity
-    guid: 68c86bb64be1d5441bb8c089c3ae3c7a
+    path: Assets/Scenes/level_2.1 (coba).unity
+    guid: f5ec68a85b157434da0e83e5a207d79f
+  - enabled: 1
+    path: Assets/Scenes/level_2.2 (coba).unity
+    guid: e3defc2307b76c94ab0ea59a954f4378
+  - enabled: 1
+    path: Assets/Scenes/level_2.3 (coba).unity
+    guid: da76a963231bc74448f10fd525864cd9
+  - enabled: 1
+    path: Assets/Scenes/level_3.1 (coba).unity
+    guid: a09e6749474d8d542a45192c153b3c65
+  - enabled: 1
+    path: Assets/Scenes/level_3.2 (coba).unity
+    guid: 9c11968832c70884795144cfb3f76482
+  - enabled: 1
+    path: Assets/Scenes/level_3.3 (coba).unity
+    guid: 4cf1b470cae7af547898ab2d205099e8
   m_configObjects: {}
