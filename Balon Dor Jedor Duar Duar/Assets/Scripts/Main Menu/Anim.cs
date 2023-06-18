@@ -8,35 +8,24 @@ public class Anim : MonoBehaviour
     public bool isGettingAchievment = false;
     public bool clickTheAchievment = false;
     public bool alreadyGetAchievment = false;
-    public int typeAchievment = 0;
+    public int trigerButtonActive;
 
     private void OnEnable() {
-        EventManager.OnButtonIkanClicked += ClickButton;
         EventManager.OnGetAchievment += PlayGetAhievementAnimation;
-
-        
-    }
+    }   
 
     private void OnDisable() {
-        EventManager.OnButtonIkanClicked -= ClickButton;
         EventManager.OnGetAchievment -= PlayGetAhievementAnimation;
     }
 
-    private void PlayAnimation() {
-        isGettingAchievment = true;
-        animator.SetBool("isGettingAchievment", isGettingAchievment);
-        animator.SetInteger("typeAchievment", 1);
-    }
 
     private void PlayGetAhievementAnimation() {
-        if(!alreadyGetAchievment){
-            isGettingAchievment = true;
-            animator.SetBool("isGettingAchievment", isGettingAchievment);
-            animator.SetInteger("Star", StarHolder.instance.totalStar);
-        }else{
-            isGettingAchievment = false;
-            animator.SetBool("isGettingAchievment", isGettingAchievment);
-        }
+        isGettingAchievment = true;
+        animator.SetBool("isGettingAchievment", isGettingAchievment);
+        animator.SetInteger("StarCarnival", StarHolder.instance.starLevelCarnival);
+        animator.SetInteger("StarBeach", StarHolder.instance.starLevelBeach);
+        animator.SetInteger("StarPark", StarHolder.instance.starLevelPark);
+        
     }   
     public void PlayClickedAnimation() {
         clickTheAchievment = true;
@@ -45,7 +34,4 @@ public class Anim : MonoBehaviour
         animator.SetBool("isalreadyGetAchievment", alreadyGetAchievment);
     }
 
-    private void ClickButton() {
-       animator.SetInteger("typeAchievment", 0);
-    }
 }

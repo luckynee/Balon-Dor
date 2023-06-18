@@ -18,13 +18,13 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel(int level)
     {
-        Debug.Log("Level " + (level + 1) + " is completed!");
+        // Debug.Log("Level " + (level + 1) + " is completed!");
         DataPersistence.instance.AddLevelCompleted(level);
     }
 
     public void UnlockLevel(int level)
     {
-        Debug.Log("Level " + (level + 2) + " is unlocked!");
+        // Debug.Log("Level " + (level + 2) + " is unlocked!");
         DataPersistence.instance.AddUnlockedLevel(level);
     }
 

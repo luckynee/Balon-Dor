@@ -10,6 +10,7 @@ public class MapTranstition : MonoBehaviour
 
     public Image bottomCloud;
     public Image topCloud;
+    public GameObject waitAnimationUntilEnd;
 
     public bool isAnimationPlaying = false;
 
@@ -31,13 +32,14 @@ public class MapTranstition : MonoBehaviour
         isAnimationPlaying = true;
         bottomCornerCloudAnimator.SetBool("isChanging", isAnimationPlaying);
         topCornerCloudAnimator.SetBool("isChanging", isAnimationPlaying);
+        waitAnimationUntilEnd.SetActive(isAnimationPlaying);
         yield return new WaitForSeconds(1.1f);
-        
 
         isAnimationPlaying = false;
         bottomCornerCloudAnimator.SetBool("isChanging", isAnimationPlaying);
         topCornerCloudAnimator.SetBool("isChanging", isAnimationPlaying);
+        yield return new WaitForSeconds(1.8f);
+        waitAnimationUntilEnd.SetActive(isAnimationPlaying);
     }
-
 
 }

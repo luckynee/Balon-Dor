@@ -133,10 +133,10 @@ TextureImporter:
         serializedVersion: 2
         x: 302
         y: 0
-        width: 355
+        width: 356
         height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,153 +144,6 @@ TextureImporter:
       bones: []
       spriteID: f159bbd4e2c95cd4098d442a659419e9
       internalID: 281172387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_6
-      rect:
-        serializedVersion: 2
-        x: 661
-        y: 281
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96191f56ee1dbce44a982a93cded8dc9
-      internalID: 774862147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_7
-      rect:
-        serializedVersion: 2
-        x: 668
-        y: 218
-        width: 7
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 297ccef7b5a129a45b9f7217ae2b0677
-      internalID: 1068191810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_8
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 211
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c906a5e3935e4ba489def36bc2fe2c9c
-      internalID: 861024665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_9
-      rect:
-        serializedVersion: 2
-        x: 675
-        y: 162
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 223e3487a0bd3c34e947683d781d439c
-      internalID: 1854934801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_10
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 155
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0da0209a9c6ab84392bcf90d9ea626a
-      internalID: 1132255751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_11
-      rect:
-        serializedVersion: 2
-        x: 267
-        y: 98
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c7069f2e742d7b4a89eb606d9d3865f
-      internalID: 1816292981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: papan selancar off_12
-      rect:
-        serializedVersion: 2
-        x: 682
-        y: 98
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a729beb849745444a60c3ca0f30a248
-      internalID: 781664909
       vertices: []
       indices: 
       edges: []

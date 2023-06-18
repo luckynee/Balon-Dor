@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class StarHolder : MonoBehaviour
+public class StarHolder : MonoBehaviour, IDataPersistence
 {
     public int getStar;
     public int totalStar;
-    public List<int> star = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0};  
+    public List<int> star = new List<int>() {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    public int starLevelCarnival;  
+    public int starLevelBeach;  
+    public int starLevelPark;  
 
     public static StarHolder instance;
 
@@ -21,11 +24,24 @@ public class StarHolder : MonoBehaviour
         }
     }
 
+    public void LoadData(GameData data)
+    {
+        this.star = data.star;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.star = this.star;
+    }
+
     void CalculateStar(){
         totalStar = star.Sum();
-        Debug.Log("Total Bintang : " + totalStar);
+        starLevelCarnival = star[0] + star[1] + star[2];
+        starLevelBeach = star[3] + star[4] + star[5];
+        starLevelPark = star[6] + star[7] + star[8];
+        // Debug.Log("Total Bintang : " + totalStar);
         
-        if(totalStar >= 6){
+        if(starLevelCarnival >= 6 || starLevelBeach >= 6 || starLevelPark >= 6){
             Debug.Log("Get Achievement");
             EventManager.GetAchievmentAnim();
         }
