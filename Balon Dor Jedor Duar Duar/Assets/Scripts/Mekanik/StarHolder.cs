@@ -42,7 +42,6 @@ public class StarHolder : MonoBehaviour, IDataPersistence
         // Debug.Log("Total Bintang : " + totalStar);
         
         if(starLevelCarnival >= 6 || starLevelBeach >= 6 || starLevelPark >= 6){
-            Debug.Log("Get Achievement");
             EventManager.GetAchievmentAnim();
         }
     }

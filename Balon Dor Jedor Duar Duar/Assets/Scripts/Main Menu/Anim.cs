@@ -7,7 +7,7 @@ public class Anim : MonoBehaviour
     public Animator animator;
     public bool isGettingAchievment = false;
     public bool clickTheAchievment = false;
-    public bool alreadyGetAchievment = false;
+    public bool alreadyGettingAchievement = false;
     public int trigerButtonActive;
 
     private void OnEnable() {
@@ -20,18 +20,16 @@ public class Anim : MonoBehaviour
 
 
     private void PlayGetAhievementAnimation() {
-        isGettingAchievment = true;
-        animator.SetBool("isGettingAchievment", isGettingAchievment);
         animator.SetInteger("StarCarnival", StarHolder.instance.starLevelCarnival);
         animator.SetInteger("StarBeach", StarHolder.instance.starLevelBeach);
         animator.SetInteger("StarPark", StarHolder.instance.starLevelPark);
-        
+        animator.SetBool("alreadyGettingAchievement", alreadyGettingAchievement);
     }   
     public void PlayClickedAnimation() {
         clickTheAchievment = true;
-        alreadyGetAchievment = true;
+        alreadyGettingAchievement = true;
         animator.SetBool("clickTheAchievment", clickTheAchievment);
-        animator.SetBool("isalreadyGetAchievment", alreadyGetAchievment);
+        animator.SetBool("alreadyGettingAchievement", alreadyGettingAchievement);
     }
 
 }
