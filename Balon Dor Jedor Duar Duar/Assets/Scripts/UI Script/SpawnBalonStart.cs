@@ -16,7 +16,6 @@ public class SpawnBalonStart : MonoBehaviour
             int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
 
             Instantiate(balon[randomBalon], spawnPoints[randomSpawnPoint].transform.position, Quaternion.identity);
-            Debug.Log("Balon spawned"); 
             yield return new WaitForSeconds(3f);
             StartCoroutine(BalonSpawnCoroutine());
     }

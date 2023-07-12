@@ -27,11 +27,17 @@ public class StarHolder : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         this.star = data.star;
+        DataPersistence.instance.levelCompleted = data.levelCompleted;
+        DataPersistence.instance.levelUnlocked = data.levelUnlocked;
+        DataPersistence.instance.achievement = data.achievement;
     }
 
     public void SaveData(ref GameData data)
     {
         data.star = this.star;
+        data.levelCompleted = DataPersistence.instance.levelCompleted;
+        data.levelUnlocked = DataPersistence.instance.levelUnlocked;
+        data.achievement = DataPersistence.instance.achievement;
     }
 
     void CalculateStar(){

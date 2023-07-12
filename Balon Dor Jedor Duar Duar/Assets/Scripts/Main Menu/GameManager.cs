@@ -28,9 +28,11 @@ public class GameManager : MonoBehaviour
         DataPersistence.instance.AddUnlockedLevel(level);
     }
 
-
+    public void Quit(){
+        Application.Quit();
+    }
     
-
+    
     
 
     
