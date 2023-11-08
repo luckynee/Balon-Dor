@@ -1,2 +1,2 @@
 # Balon-Dor
-Project WPG 4 Balon Dor
+This mobile game is designed to provide children with an engaging educational experience on color mixing. In this game, players are encouraged to choose a color and shoot balloons of the matching color. Moreover, players have the creative freedom to experiment with color blending by dragging primary colors onto one another, allowing them to explore a wide spectrum of possibilities. With no losing condition, the game's primary focus remains on the joy of color mixing and discovery.
